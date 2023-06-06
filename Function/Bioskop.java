@@ -31,6 +31,7 @@ public class Bioskop {
         int pilihJudul= 0;
         int pilihan = 0;
         String isContinue3 = "y";
+        boolean status = false;
         
         Tiket user = new Tiket();
         System.out.println("==================== PEMESANAN TIKET BIOSKOP ====================");
@@ -81,17 +82,21 @@ public class Bioskop {
                     isContinue2 = input.next();
             }
         }
-        System.out.print("Jumlah yang ingin dibeli :");
+        Film selectedFilm = filmList.get(pilihJudul-1);
+        do {
+            System.out.print("Jumlah yang ingin dibeli :");
         jumlah = input.nextInt();
-
-        Film selectedFilm = filmList.get(pilihJudul-1); 
-        if (selectedFilm.getKapasitas() <= jumlah) {
-            System.out.println("Jumlah tiket Kurang");
-        }else {
-            int kap = selectedFilm.getKapasitas();
-            kap = selectedFilm.getKapasitas()-jumlah;
-            selectedFilm.setKapasitas(kap);
-        }
+            if (selectedFilm.getKapasitas() >= jumlah ) {
+                int kap = selectedFilm.getKapasitas();
+                kap = selectedFilm.getKapasitas()-jumlah;
+                selectedFilm.setKapasitas(kap);
+                status = false;
+            }else {
+                System.out.println("Jumlah tiket Kurang");
+                status = true;
+            }
+        }while(status == true);
+        
         
 
         user.setJumlah(jumlah);

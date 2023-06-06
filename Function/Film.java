@@ -36,7 +36,5 @@ public class Film {
     }
     public void setKode(String kode) {
         this.kode = kode;
-    }
-
-
+    }  
 }

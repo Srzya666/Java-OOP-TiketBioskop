@@ -15,5 +15,5 @@ abstract class Pemesanan {
     public void setTelp(String telp) {
         this.telp = telp; 
     }
-    public abstract void displayjam();
+    public abstract void displayjam(); 
 }
