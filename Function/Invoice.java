@@ -1,5 +1,13 @@
 package Function;
 class Invoice {
+    private String nama;
+    private String telp;
+    private String kode;
+    private String judul;
+    private String jam;
+    private int harga;
+    private int jumlah;
+
     public Invoice (String getNama,String getTelp,String getKode,String getJudul,String getJam,int getHarga,int getJumlah) {
         this.nama = getNama;
         this.kode = getKode;
@@ -9,17 +17,11 @@ class Invoice {
         this.harga = getHarga;
         this.jumlah = getJumlah;
     }
-    private String nama;
-    private String telp;
-    private String kode;
-    private String judul;
-    private String jam;
-    private int harga;
-    private int jumlah;
+   
     
     public int total() {
         return harga*jumlah;
-       }
+    }
 
     protected void show(){
         System.out.println("");

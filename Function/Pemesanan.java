@@ -9,6 +9,7 @@ abstract class Pemesanan {
     public void setNama(String nama) {
         this.nama = nama;;
     }
+    
     public String getTelp() {
         return this.telp;
     }

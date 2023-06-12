@@ -5,29 +5,17 @@ public class Bioskop {
     static Scanner input = new Scanner(System.in);
     public static ArrayList <Film> filmList = new ArrayList<Film>();
 
-    public void initFilm(){
+    public static void initFilm(){
         filmList.add(new Film(35000, 20,"Pengabdi Setan 2 : Communion", "B001"));
         filmList.add(new Film(35000, 20,"The Big 4", "B002"));
         filmList.add(new Film(35000, 20,"Rumah Dara 2", "B003"));
         filmList.add(new Film(35000, 20,"Cek Toko Sebelah 2", "B004"));
         filmList.add(new Film(35000, 20,"Comic 8", "B005"));
     }
-    public static void displayMenu(){
-        int i = 0;
-        System.out.println("======================= LIST FILM =======================");
-        for (Film film : filmList) {
-            i++;
-            System.out.println(i+". "+film.getJudul());
-            System.out.println("Jumlah Tiket :"+film.getKapasitas());
-            System.out.println("");
-        }
-    }
+    
     public static void initBioskop(){
-        Bioskop bioskop = new Bioskop();
-        bioskop.initFilm();
         String jam = "";
         int jumlah = 0;
-        int harga = 35000; 
         int pilihJudul= 0;
         int pilihan = 0;
         String isContinue3 = "y";
@@ -39,20 +27,17 @@ public class Bioskop {
         String nama = input.next();
         System.out.print("Masukan No.Telp :");
         String telp = input.next();
-
         user.setNama(nama);
         user.setTelp(telp);
+        // Bioskop.initFilm();
 
         do{
-
         String isContinue = "y";
         String isContinue2 = "y";
-
         Film film = null;
 
         while (isContinue.equals("y")) {
-            // user.displayfilm();
-            displayMenu();
+            Display.displayMenu();
             System.out.print("Masukan Pilihan Film :");
             pilihJudul = input.nextInt();
             switch(pilihJudul) {
@@ -65,8 +50,9 @@ public class Bioskop {
                     System.out.print("continue ? ");
                     isContinue = input.next();
             }
-            clears();
+            Display.clears();
         }
+
         while (isContinue2.equals("y")) {
             user.displayjam();
             System.out.print("Masukan Pilihan Jam :");
@@ -82,6 +68,7 @@ public class Bioskop {
                     isContinue2 = input.next();
             }
         }
+
         Film selectedFilm = filmList.get(pilihJudul-1);
         do {
             System.out.print("Jumlah yang ingin dibeli :");
@@ -102,21 +89,13 @@ public class Bioskop {
         user.setJumlah(jumlah);
         user.setKode(film.getKode());
         user.setJam(jam);
-        user.setHarga(harga);
+        user.setHarga(film.getHarga());
         user.setJudul(film.getJudul());
-
-        clears();
+        Display.clears();
         user.getInvoice();
 
         System.out.println("Apakah ingin memesan lagi?");
         isContinue3 = input.next();
         }while(isContinue3.equals("y"));
-    }
-    public static void clears(){
-        try{
-            new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
-        }catch(Exception E){
-            System.out.println("Tidak bisa clear screen");
-        }
     }
 }

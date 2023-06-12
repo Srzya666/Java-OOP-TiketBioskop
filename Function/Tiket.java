@@ -43,7 +43,6 @@ public class Tiket extends Pemesanan {
     public void setJumlahtiket(int jumlahtiket) {
         this.jumlahtiket = jumlahtiket;
     }
-
     public void displayjam(){
         System.out.println("==================== JAM PEMESANAN ====================");
         System.out.println("1. 14.30");
@@ -52,7 +51,6 @@ public class Tiket extends Pemesanan {
         System.out.println("4. 20.15");
         System.out.println("5. 22.10");
     }
-
    public void getInvoice() {
         Invoice invoice = new Invoice(getNama(), getTelp(), kode, judul, jam, harga,jumlah);
         invoice.show();

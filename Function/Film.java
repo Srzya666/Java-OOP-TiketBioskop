@@ -4,12 +4,14 @@ public class Film {
     private String judul;
     private String kode;
     private int kapasitas;
+
     public Film (int harga,int kapasitas, String judul,String kode) {
         this.harga = harga;
         this.kapasitas = kapasitas;
         this.kode = kode;
         this.judul = judul;
     }
+    
     public int getHarga() {
         return this.harga;
     }
