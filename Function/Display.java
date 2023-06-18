@@ -13,9 +13,8 @@ public class Display {
             System.out.println("");
         }
     }
-
     public static void menu(){
-        boolean status = true;
+        String isContinue1 = "y";
         do{
         System.out.println("=============================================================");
         System.out.println("=                     1.Pilihan Film                        =");
@@ -26,17 +25,21 @@ public class Display {
         int pilihMenu = input.nextInt();
             switch(pilihMenu){
             case 1 : 
-                Display.displayMenu();
-                System.out.println("Kembali ke Menu (true/false) :");
-                status = input.nextBoolean();
+                    Display.displayMenu();
+                    input.nextLine();
+                    try {
+                      System.out.println("Kembali ke Menu :");
+                      isContinue1 = input.nextLine();  
+                    } catch (Exception e) {
+                        System.out.println("error");
+                    }
                 break;
                 case 2 : Bioskop.initBioskop();break;
                 case 3 : return;
                 default : System.out.println("Pilihan salah");
             }
-        }while(status == true);
+        }while(isContinue1.equals("y"));
     }
-
     public static void clears(){
         try{
             new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();

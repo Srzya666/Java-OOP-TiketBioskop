@@ -29,7 +29,6 @@ public class Bioskop {
         String telp = input.next();
         user.setNama(nama);
         user.setTelp(telp);
-        // Bioskop.initFilm();
 
         do{
         String isContinue = "y";
