@@ -54,7 +54,7 @@ public class Bioskop {
 
         while (isContinue2.equals("y")) {
             user.displayjam();
-            System.out.print("Masukan Pilihan Jam :");
+            System.out.print("Masukan Pilihan Sesi :");
             pilihan = input.nextInt();
             switch (pilihan) {
                 case 1 : jam = "14.30"; isContinue2="n"; break;
@@ -72,7 +72,10 @@ public class Bioskop {
         do {
             System.out.print("Jumlah yang ingin dibeli :");
         jumlah = input.nextInt();
-            if (selectedFilm.getKapasitas() >= jumlah ) {
+            if (jumlah < 1){
+                System.out.println("Jumlah tiket tidak valid");
+                status = true;
+            }else if (selectedFilm.getKapasitas() >= jumlah ) {
                 int kap = selectedFilm.getKapasitas();
                 kap = selectedFilm.getKapasitas()-jumlah;
                 selectedFilm.setKapasitas(kap);
@@ -93,7 +96,7 @@ public class Bioskop {
         Display.clears();
         user.getInvoice();
 
-        System.out.println("Apakah ingin memesan lagi?");
+        System.out.println("Apakah ingin memesan lagi? (y/n)");
         isContinue3 = input.next();
         }while(isContinue3.equals("y"));
     }

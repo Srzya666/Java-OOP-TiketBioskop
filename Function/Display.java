@@ -21,14 +21,14 @@ public class Display {
         System.out.println("=                     2.Pesan Tiket                         ="); 
         System.out.println("=                     3.End Program                         =");    
         System.out.println("=============================================================");  
-        System.out.print("Masukan Pilihan :");
+        System.out.print("Masukan Pilihan (1-3) :");
         int pilihMenu = input.nextInt();
             switch(pilihMenu){
             case 1 : 
                     Display.displayMenu();
                     input.nextLine();
                     try {
-                      System.out.println("Kembali ke Menu :");
+                      System.out.println("Kembali ke Menu (y/n) :");
                       isContinue1 = input.nextLine();  
                     } catch (Exception e) {
                         System.out.println("error");
