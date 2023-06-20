@@ -55,4 +55,7 @@ public class Tiket extends Pemesanan {
         Invoice invoice = new Invoice(getNama(), getTelp(), kode, judul, jam, harga,jumlah);
         invoice.show();
    }
+   public void ucapan(){
+    System.out.println("Terimakasih Sudah memesan Di Bioskop kami");
+   }
 }

@@ -96,8 +96,11 @@ public class Bioskop {
         Display.clears();
         user.getInvoice();
 
+        
         System.out.println("Apakah ingin memesan lagi? (y/n)");
         isContinue3 = input.next();
         }while(isContinue3.equals("y"));
+        user.ucapan();
     }
+    
 }
