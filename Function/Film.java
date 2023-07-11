@@ -11,6 +11,13 @@ public class Film {
         this.kode = kode;
         this.judul = judul;
     }
+
+    public Film () {
+        this.harga = 10000;
+        this.kapasitas = 100;
+        this.kode = "t001";
+        this.judul = "2012";    
+    }
     
     public int getHarga() {
         return this.harga;

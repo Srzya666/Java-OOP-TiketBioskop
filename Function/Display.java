@@ -10,6 +10,7 @@ public class Display {
             i++;
             System.out.println(i+". "+film.getJudul());
             System.out.println("Jumlah Tiket :"+film.getKapasitas());
+            System.out.println("Harga Tiket :"+film.getHarga());
             System.out.println("");
         }
     }

@@ -11,6 +11,7 @@ public class Bioskop {
         filmList.add(new Film(35000, 20,"Rumah Dara 2", "B003"));
         filmList.add(new Film(35000, 20,"Cek Toko Sebelah 2", "B004"));
         filmList.add(new Film(35000, 20,"Comic 8", "B005"));
+        filmList.add(new Film());
     }
     
     public static void initBioskop(){
@@ -36,19 +37,34 @@ public class Bioskop {
         Film film = null;
 
         while (isContinue.equals("y")) {
+
+            //Revisi UAS memanggil display dengan FOR
             Display.displayMenu();
+            
             System.out.print("Masukan Pilihan Film :");
             pilihJudul = input.nextInt();
-            switch(pilihJudul) {
-                case 1 : film = filmList.get(0); isContinue="n"; break;
-                case 2 : film = filmList.get(1); isContinue="n"; break;
-                case 3 : film = filmList.get(2); isContinue="n"; break;
-                case 4 : film = filmList.get(3); isContinue="n"; break;
-                case 5 : film = filmList.get(4); isContinue="n"; break;
-                default : System.out.println("Pilihan Tidak Tersedia,Silahkan Pilih Kembali");
-                    System.out.print("continue ? ");
-                    isContinue = input.next();
+
+            //revisi UAS memilih yang ada di display
+            if(pilihJudul <= filmList.size() && pilihJudul != 0){
+                film = filmList.get(pilihJudul-1);
+                isContinue="n";
+            }else{
+                System.out.println("PIlihan Tidak Tersedia");
             }
+            System.out.println("Silahkan pilih kembali Y/N :");
+            isContinue = input.next();
+            
+
+            // switch(pilihJudul) {
+            //     case 1 : film = filmList.get(0); isContinue="n"; break;
+            //     case 2 : film = filmList.get(1); isContinue="n"; break;
+            //     case 3 : film = filmList.get(2); isContinue="n"; break;
+            //     case 4 : film = filmList.get(3); isContinue="n"; break;
+            //     case 5 : film = filmList.get(4); isContinue="n"; break;
+            //     default : System.out.println("Pilihan Tidak Tersedia,Silahkan Pilih Kembali");
+            //         System.out.print("continue ? ");
+            //         isContinue = input.next();
+            // }
             Display.clears();
         }
 

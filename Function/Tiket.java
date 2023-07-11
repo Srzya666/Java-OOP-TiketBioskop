@@ -5,7 +5,6 @@ public class Tiket extends Pemesanan {
     private int harga;
     private int jumlah;
     private String judul;
-    private int jumlahtiket;
 
     public String getKode(){
         return this.kode;
@@ -37,12 +36,7 @@ public class Tiket extends Pemesanan {
     public void setJumlah(int jumlah){
         this.jumlah = jumlah;
     }
-    public int getJumlahtiket() {
-        return this.jumlahtiket;
-    }
-    public void setJumlahtiket(int jumlahtiket) {
-        this.jumlahtiket = jumlahtiket;
-    }
+    
     public void displayjam(){
         System.out.println("==================== JAM PEMESANAN ====================");
         System.out.println("1. 14.30");
