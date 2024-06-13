@@ -17,6 +17,7 @@ public class Display {
     public static void menu(){
         String isContinue1 = "y";
         do{
+        System.out.println("=                    BIOSKOP BOOKING                        =");
         System.out.println("=============================================================");
         System.out.println("=                     1.Pilihan Film                        =");
         System.out.println("=                     2.Pesan Tiket                         ="); 
